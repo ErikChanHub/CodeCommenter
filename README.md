@@ -36,6 +36,20 @@
         └─views
 ```
 
+## 预览
+
+- 编辑器提示
+
+  ![](./figures/hd.jpg)
+
+- 生成注释
+
+  ![](./figures/note.jpg)
+
+- 自定义注释
+
+  ![](./figures/settings.jpg)
+
 ## Vscode 端
 
 - 技术栈: `Typescript` , `vscode 框架`, `Python`
