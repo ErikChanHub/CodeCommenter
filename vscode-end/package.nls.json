@@ -1,0 +1,10 @@
+{
+    "description": "Aims to help each programmer develop the good habit of writing comments\n致力于帮助每位程序员养成写注释的好习惯",
+
+    "codeCommenter.comments_settings": "Code Comments Settings",
+
+    "codeCommenter.editor.add_hd_comments":"Add File Header Comments",
+    "codeCommenter.editor.add_fun_comments":"Add Function Comments",
+
+    "codeCommenter.progress.apply.template":"The template is being applied..."
+}

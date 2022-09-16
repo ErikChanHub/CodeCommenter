@@ -1,0 +1,10 @@
+{
+    "description": "致力于帮助每位程序员养成写注释的好习惯",
+
+    "codeCommenter.comments_settings": "代码注释设置",
+    
+    "codeCommenter.editor.add_hd_comments":"添加文件头注释",
+    "codeCommenter.editor.add_fun_comments":"添加函数头注释",
+
+    "codeCommenter.progress.apply.template":"正在配置模板..."
+}

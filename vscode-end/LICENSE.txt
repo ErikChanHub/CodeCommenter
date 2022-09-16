@@ -1,0 +1,3 @@
+﻿Code Commenter 软件许可协议
+
+Code Commenter 遵循 MIT 协议，后续会在 github 中开源, 欢迎提交代码

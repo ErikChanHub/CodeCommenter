@@ -1,0 +1,44 @@
+		"configuration": {
+			"title": "Code Notes",
+			"properties": {
+				"codeCommenter.templates": {
+					"type": "object",
+					"properties": {
+						"header": {
+							"type": "string",
+							"default": "json",
+							"description": "文件头部注释"
+						},
+						"fun": {
+							"type": "string",
+							"default": "json",
+							"description": "函数注释"
+						}
+					},
+					"additionalProperties": false,
+					"default": {
+						"header": "json",
+						"fun": "json=omitempty"
+					},
+					"description": "注释的模板信息.",
+					"scope": "resource"
+				},
+				"codeCommenter.templatesArray": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "注释的模板信息.",
+					"scope": "resource"
+				}
+			}
+		}
+
+		,
+		"snippets": [
+			{
+				"language": "c",
+				"path": "./snippets/snippets.json"
+			}
+		]
