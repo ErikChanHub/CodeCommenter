@@ -19,22 +19,14 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  /* background-color: rgb(37,37,38); */
 }
-/* 浅色主题 */
-/* .vscode-light body {
-    background: white;
-    color: black;
-} */
-/* 深色主题 */
 .vscode-dark body {
-    background: #252526;
-    color: white;
+  background: #252526;
+  color: white;
 }
-/* 高对比度主题 */
 .vscode-high-contrast body {
-    background: rgb(37,37,38);
-    color: red;
+  background: rgb(37, 37, 38);
+  color: red;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

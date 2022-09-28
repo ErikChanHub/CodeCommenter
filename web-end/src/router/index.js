@@ -1,25 +1,31 @@
-import Router from 'vue-router'
-import Vue from 'vue'
+
+import { createRouter,createWebHashHistory } from 'vue-router'
 import Layout from '@/layout'
 
-Vue.use(Router);
-
 // 路由推送当前的地址
-const routerPush = Router.prototype.push
-Router.prototype.push = function push(location) {
-    return routerPush.call(this, location).catch(error => error)
-}
+// const routerPush = VueRouter.prototype.push
+// VueRouter.prototype.push = function push(location) {
+//   return routerPush.call(this, location).catch((error) => error)
+// }
 
-export default new Router({
-    routes: [{
-        path: '/',
-        redirect: '/templates',
-        name: 'Layout',
-        component: Layout,
-        children: [{
-            path: '/templates',
-            name: 'Templates',
-            component: resolve => require(['@/views/templates.vue'], resolve)
-        }]
-    }]
-});
+
+const routes = [
+  {
+    path: '/',
+    redirect: '/templates',
+    name: 'Layout',
+    component: Layout,
+    children: [
+      {
+        path: '/templates',
+        name: 'Templates',
+        component: () => import('@/views/templates.vue'),
+      },
+    ],
+  },
+]
+
+export default createRouter({
+  history: createWebHashHistory(),
+  routes: routes,
+})

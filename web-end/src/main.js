@@ -1,20 +1,23 @@
-// import './themes/element-#F48055/index.css'
-import Vue from 'vue'
+import * as Vue from 'vue'
 import App from './App.vue'
-import ElementUI from 'element-ui';
+import ElementPlus from 'element-plus';
 import router from './router'
-import 'element-ui/lib/theme-chalk/index.css';
-import mavonEditor from 'mavon-editor'
+import 'element-plus/dist/index.css';
 import i18n from '@/assets/languages/index'
 
-Vue.use(mavonEditor)
-Vue.use(ElementUI);
-Vue.config.productionTip = false
+// import VueMarkdownEditor from '@kangc/v-md-editor';
+import VMdPreview from '@kangc/v-md-editor/lib/preview';
+import '@kangc/v-md-editor/lib/style/base-editor.css';
+import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+VMdPreview.use(vuepressTheme);
 
-
-new Vue({
-    el: '#app',
-    i18n,
-    router,
-    render: h => h(App),
-}).$mount('#app')
+var app = Vue.createApp(App);
+app.use(ElementPlus);
+app.use(i18n);
+app.use(router);
+app.use(VMdPreview);
+app.config.globalProperties.routerAppend = (path, pathToAppend) => {
+  return path + (path.endsWith('/') ? '' : '/') + pathToAppend
+}
+app.mount('#app')
