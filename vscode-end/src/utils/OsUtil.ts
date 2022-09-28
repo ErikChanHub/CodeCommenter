@@ -67,7 +67,7 @@ export function getOsType(): OsType {
         url: "https://apis.map.qq.com/ws/location/v1/ip",
         method: "GET",
         qs: {
-          "key": "KYXBZ-WMXK3-PHT3R-3NCF4-AWGSF-GCBMG"
+          "key": "OKDBZ-WNNWG-V26QD-IX4KY-O7OCS-XEFKL"
         }
       }, function (error, response, body) {
         if (response.statusCode === 200) {

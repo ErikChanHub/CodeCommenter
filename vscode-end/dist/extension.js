@@ -614,23 +614,28 @@ exports.ActivationStatistics = ActivationStatistics;
  */
 function startStatistics() {
     (0, OsUtil_1.getIp)().then(function (value) {
-        var returnCitySN = JSON.parse(String(value));
-        var location = returnCitySN.result;
-        const url = global_1.REMOTE_SERVER_URL + 'launch/add';
-        const dataJson = {
-            "macAddr": (0, OsUtil_1.getMac)(),
-            "extVersion": (0, OsUtil_1.getVersion)(),
-            "ipAddr": location.ip,
-            "country": location.ad_info.nation,
-            "provience": location.ad_info.province,
-            "city": location.ad_info.city
-        };
-        const request = new StatisticsRequest_1.StatisticsRequest(url, dataJson, "POST" /* POST */);
-        request.run(function (error, response, body) {
-            if (response === undefined) {
-                return;
-            }
-        });
+        try {
+            var returnCitySN = JSON.parse(String(value));
+            var location = returnCitySN.result;
+            const url = global_1.REMOTE_SERVER_URL + 'launch/add';
+            const dataJson = {
+                "macAddr": (0, OsUtil_1.getMac)(),
+                "extVersion": (0, OsUtil_1.getVersion)(),
+                "ipAddr": location.ip,
+                "country": location.ad_info.nation,
+                "provience": location.ad_info.province,
+                "city": location.ad_info.city
+            };
+            const request = new StatisticsRequest_1.StatisticsRequest(url, dataJson, "POST" /* POST */);
+            request.run(function (error, response, body) {
+                if (response === undefined) {
+                    return;
+                }
+            });
+        }
+        catch (error) {
+            console.log('startStatistics error....');
+        }
     });
 }
 /**
@@ -33524,7 +33529,7 @@ function getIp() {
             url: "https://apis.map.qq.com/ws/location/v1/ip",
             method: "GET",
             qs: {
-                "key": "KYXBZ-WMXK3-PHT3R-3NCF4-AWGSF-GCBMG"
+                "key": "OKDBZ-WNNWG-V26QD-IX4KY-O7OCS-XEFKL"
             }
         }, function (error, response, body) {
             if (response.statusCode === 200) {

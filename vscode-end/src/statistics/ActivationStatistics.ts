@@ -44,23 +44,27 @@ export class ActivationStatistics{
  */
 function startStatistics(): void {
 	getIp().then(function (value) {
-		var returnCitySN = JSON.parse(String(value));
-		var location = returnCitySN.result;
-		const url = REMOTE_SERVER_URL + 'launch/add';
-		const dataJson = {
-			"macAddr": getMac(),
-			"extVersion": getVersion(),
-			"ipAddr": location.ip,
-			"country": location.ad_info.nation,
-			"provience": location.ad_info.province,
-			"city": location.ad_info.city
-		};
-		const request = new StatisticsRequest(url, dataJson, RequestMethod.POST);
-		request.run(function (error, response, body) {
-			if (response === undefined) {
-				return;
-			}
-		});
+		try {
+			var returnCitySN = JSON.parse(String(value));
+			var location = returnCitySN.result;
+			const url = REMOTE_SERVER_URL + 'launch/add';
+			const dataJson = {
+				"macAddr": getMac(),
+				"extVersion": getVersion(),
+				"ipAddr": location.ip,
+				"country": location.ad_info.nation,
+				"provience": location.ad_info.province,
+				"city": location.ad_info.city
+			};
+			const request = new StatisticsRequest(url, dataJson, RequestMethod.POST);
+			request.run(function (error, response, body) {
+				if (response === undefined) {
+					return;
+				}
+			});
+		} catch (error) {
+			console.log('startStatistics error....');
+		}
 	});
 }
 
