@@ -3,7 +3,7 @@
 import * as vscode from 'vscode';
 import { globalMonitor } from './monitor/globalMonitor';
 import { globalSnippets } from './snippets/globalSnippets';
-import { codeNotesWebview } from './webview/codeNotesWebview';
+import { CodeNotesWebview } from './webview/CodeNotesWebview';
 import fs = require('fs');
 import { extensionId, flagMarkdown } from './global';
 import { ActivationStatistics } from './statistics/ActivationStatistics';
@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "codeCommenter" is now active!');
 
-	var view = new codeNotesWebview(context);
+	var view = new CodeNotesWebview(context);
 	view.init();
 
 	let createCommand = vscode.commands.registerCommand('codecommenter.templates', () => {

@@ -4,7 +4,7 @@ import { localize } from '../localize';
 const fs = require('fs');
 const path = require('path');
 
-export class codeNotesWebview {
+export class CodeNotesWebview {
 
     context: vscode.ExtensionContext;
 
@@ -28,6 +28,7 @@ export class codeNotesWebview {
                     // localResourceRoots: [vscode.Uri.file(path.join(this.context.extensionPath, "media"))],
                 }
             );
+            panel.iconPath = vscode.Uri.file(path.join(this.context.extensionPath, "images/logo.png"));
             panel.webview.html = getWebViewContent(this.context, panel, "web/template-settings", "index.html");
 
             var hdNotesTemp = tempPath.concat("/hd-comments.temp");

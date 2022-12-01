@@ -80,10 +80,6 @@ export default {
     const that = this
     window.onresize = () => {
       return (() => {
-        // 可以限制最小高度
-        // if (document.body.clientHeight - 240 < 450) {
-        //   return
-        // }
         window.screenHeight = document.body.clientHeight - 110
         that.screenHeight = window.screenHeight
       })()
